@@ -139,7 +139,19 @@ public class Ennemy : MonoBehaviour
             audioSource.Play();
             StartCoroutine(SoundCoroutine());
 
-          
+            if (gameObject.GetComponent<Merman>())
+            {
+                GameManager.deathData.mermanCount++;
+            }
+            else if (gameObject.GetComponent<Zombie>())
+            {
+                GameManager.deathData.zombieCount++;
+            }
+            else if (gameObject.GetComponent<Giant>())
+            {
+                GameManager.deathData.giantCount++;
+            }
+
         }
         //Display new health
         slider.value = currentHP;

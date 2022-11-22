@@ -10,6 +10,7 @@ public class GoldCoin : MonoBehaviour
         Player player = collision.GetComponent<Player>();
         if (player)
         {
+            GameManager.deathData.goldCount++;
             TitleManager.saveData.gold++;
             Destroy(gameObject);
         }

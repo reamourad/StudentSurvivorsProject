@@ -83,7 +83,7 @@ public class Player : MonoBehaviour
             //Check if dead
             if (--hp <= 0)
             {
-                SceneManager.LoadScene("Title");
+                SceneManager.LoadScene("Dead");
                 Destroy(gameObject);
             }
             return true;
@@ -105,6 +105,7 @@ public class Player : MonoBehaviour
     internal void AddExp()
     {
         currentExp++;
+        GameManager.deathData.expCount++;
         if(currentExp >= expToLevel)
         {
             currentExp = 0;
