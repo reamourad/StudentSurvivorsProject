@@ -10,7 +10,7 @@ public class CharacterCanvas : MonoBehaviour
     public int speed;
     public Sprite sprite;
     public int baseWeapon;
-    public bool isLocked;
     public int price;
     public RuntimeAnimatorController controller;
+    public bool isLocked;
 }

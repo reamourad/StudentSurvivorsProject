@@ -18,6 +18,7 @@ public class FireballSpawner : BaseWeapon
             var fire = Instantiate(fireBall, player.transform.position, Quaternion.identity);
             fire.GetComponent<Fireball>().damage = this.damage;
             fire.GetComponent<Fireball>().player = this.player;
+            fire.transform.localScale += new Vector3(0.5f * level, 0.5f * level, 0.5f * level);
             yield return new WaitForSeconds(1f);
         }
     }

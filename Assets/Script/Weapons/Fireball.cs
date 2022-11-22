@@ -9,8 +9,11 @@ public class Fireball : BaseWeapon
     Vector3 direction;
     private void Start()
     {
-        direction = player.transform.localScale == new Vector3(1, 1, 1) ? Vector3.left : Vector3.right; 
+        direction = player.transform.localScale == new Vector3(1, 1, 1) ? Vector3.left : Vector3.right;
+        transform.position += direction;
+        Debug.Log(gameObject.transform.localScale);
     }
+
 
     private void Update()
     {

@@ -10,4 +10,5 @@ public class SaveData
     public int deaths;
     public int damagePermanent = 0;
     public int speedPermanent = 0;
+    public bool isLocked = true;
 }

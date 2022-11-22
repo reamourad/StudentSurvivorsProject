@@ -18315,7 +18315,6 @@ GameObject:
   - component: {fileID: 998950751535688628}
   - component: {fileID: 998950751535688627}
   - component: {fileID: 998950751535688626}
-  - component: {fileID: 6225755555435604671}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -33054,7 +33053,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &998950751296915007
 Transform:
   m_ObjectHideFlags: 0
@@ -33368,25 +33367,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &6225755555435604671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1039627654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcb86be81958b214e80371860650af6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  level: 0
-  damage: 1
-  weaponName: 
-  description: 
-  sprite: {fileID: 0}
-  player: {fileID: 0}
-  fireBall: {fileID: 0}
 --- !u!1001 &8497160963576000315
 PrefabInstance:
   m_ObjectHideFlags: 0

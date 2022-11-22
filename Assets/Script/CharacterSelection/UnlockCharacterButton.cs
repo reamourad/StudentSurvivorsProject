@@ -9,14 +9,14 @@ public class UnlockCharacterButton : MonoBehaviour
     [SerializeField] private TMP_Text buttonText;
     private void Update()
     {
-        buttonText.text = CharacterManager.currentCharacter.isLocked ? "Unlock (" + CharacterManager.currentCharacter.price.ToString() + ")"  : "Submit";
+        buttonText.text = CharacterManager.currentCharacter.isLocked ? "Unlock (" + CharacterManager.currentCharacter.price.ToString() + ")" : "Submit";
     }
 
     public void onButtonClick()
     {
         if (CharacterManager.currentCharacter.isLocked)
         {
-            if(TitleManager.saveData.gold >= CharacterManager.currentCharacter.price)
+            if (TitleManager.saveData.gold >= CharacterManager.currentCharacter.price)
             {
                 TitleManager.saveData.gold -= CharacterManager.currentCharacter.price;
                 CharacterManager.currentCharacter.isLocked = false;
@@ -24,7 +24,7 @@ public class UnlockCharacterButton : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("Game"); 
+            SceneManager.LoadScene("Game");
         }
     }
 }
