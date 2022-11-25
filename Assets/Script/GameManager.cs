@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject zombie2;
     [SerializeField] private GameObject boss;
     [SerializeField] private GameObject player;
+
+    [SerializeField] private GameObject level1Background;
+    [SerializeField] private GameObject level2Background;
     public static DeathData deathData;
 
 
@@ -202,6 +205,12 @@ public class GameManager : MonoBehaviour
             int minutes = (int)Time.timeSinceLevelLoad / 60;
             int seconds = (int)Time.timeSinceLevelLoad % 60;
             timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+
+            if(minutes == 1)
+            {
+                level1Background.SetActive(false);
+                level2Background.SetActive(true);
+            }
         }
     }
 

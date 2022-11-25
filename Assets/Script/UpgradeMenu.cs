@@ -15,7 +15,7 @@ public class UpgradeMenu : MonoBehaviour
         foreach (GameObject upgrade in upgradeCanvas)
         {
             //find a weapon that hasnt been chosen yet
-            int randomIndex = 5;
+            int randomIndex = 1;
             //int randomIndex = Random.Range(0, player.weapons.Length);
             while (chosenNums.Contains(randomIndex))
             {

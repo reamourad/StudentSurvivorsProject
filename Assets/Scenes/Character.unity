@@ -889,8 +889,8 @@ PrefabInstance:
       objectReference: {fileID: 389074736, guid: ac297e39cd43514489ec44a41c0dc026, type: 3}
     - target: {fileID: 890569596012333976, guid: 9d5a542617db39749a606b58d765d59c, type: 3}
       propertyPath: baseWeapon
-      value: 
-      objectReference: {fileID: 911975912447284542, guid: f8fc2a25f7ebdf048ab8d573a52b3fe6, type: 3}
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 890569596012333976, guid: 9d5a542617db39749a606b58d765d59c, type: 3}
       propertyPath: controller
       value: 
@@ -1204,7 +1204,7 @@ PrefabInstance:
       objectReference: {fileID: 890212565}
     - target: {fileID: 890569596012333976, guid: 9d5a542617db39749a606b58d765d59c, type: 3}
       propertyPath: price
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 890569596012333976, guid: 9d5a542617db39749a606b58d765d59c, type: 3}
       propertyPath: speed
