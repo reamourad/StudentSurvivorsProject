@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject level1Background;
     [SerializeField] private GameObject level2Background;
+    [SerializeField] private GameObject levelCanvas;
+    private bool levelUp;
     public static DeathData deathData;
 
 
@@ -37,7 +39,7 @@ public class GameManager : MonoBehaviour
         SpawnEnnemies(zombie, 3);
         SpawnEnnemies(giant, 5);
         yield return new WaitForSeconds(5f);
-        
+
         Debug.Log("First wave done!");
 
         //Second wave 30 seconds
@@ -54,6 +56,9 @@ public class GameManager : MonoBehaviour
         SpawnEnnemies(zombie2, 7);
         yield return new WaitForSeconds(10f);
         Debug.Log("Second wave done!");
+
+        Time.timeScale = 0;
+        levelCanvas.SetActive(true);
 
         //Second wave 30 seconds
         SpawnEnnemies(merman, 5, true);
@@ -184,16 +189,13 @@ public class GameManager : MonoBehaviour
         SpawnEnnemies(boss, 1);
         yield return new WaitForSeconds(10f);
 
-        while (true)
+        if (player)
         {
-            if (player)
-            {
-                SpawnEnnemies(merman, 15 * spawnCounter, false, spawnCounter);
-                yield return new WaitForSeconds(4f);
-                SpawnEnnemies(zombie, 15 * spawnCounter, true, spawnCounter);
-                yield return new WaitForSeconds(4f);
-                spawnCounter++;
-            }
+            SpawnEnnemies(merman, 15 * spawnCounter, false, spawnCounter);
+            yield return new WaitForSeconds(4f);
+            SpawnEnnemies(zombie, 15 * spawnCounter, true, spawnCounter);
+            yield return new WaitForSeconds(4f);
+            spawnCounter++;
         }
     }
 
@@ -206,14 +208,17 @@ public class GameManager : MonoBehaviour
             int seconds = (int)Time.timeSinceLevelLoad % 60;
             timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
 
-            if(minutes == 1)
-            {
-                level1Background.SetActive(false);
-                level2Background.SetActive(true);
-            }
         }
     }
 
+    public void onLevelButtonClick()
+    {
+        level1Background.SetActive(false);
+        level2Background.SetActive(true);
+        levelCanvas.SetActive(false);
+        //reset everything 
+        Time.timeScale = 1;
+    }
 
     void SpawnEnnemies(GameObject ennemyPrefab, int numberOfEnnemies, bool isWaveTracking = false, int additionalHealth = 0)
     {
