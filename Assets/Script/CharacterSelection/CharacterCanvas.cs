@@ -13,4 +13,5 @@ public class CharacterCanvas : MonoBehaviour
     public int price;
     public RuntimeAnimatorController controller;
     public bool isLocked;
+    public int currentLevel = 1;
 }

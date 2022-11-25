@@ -11,7 +11,6 @@ public class Fireball : BaseWeapon
     {
         direction = player.transform.localScale == new Vector3(1, 1, 1) ? Vector3.left : Vector3.right;
         transform.position += direction;
-        Debug.Log(gameObject.transform.localScale);
     }
 
 
