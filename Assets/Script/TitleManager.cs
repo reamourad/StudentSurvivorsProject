@@ -87,8 +87,14 @@ public class TitleManager : MonoBehaviour
         SceneManager.LoadScene("Upgrade");
     }
 
+    public void onPostProcessingButton()
+    {
+        SceneManager.LoadScene("Post Processing");
+    }
+
     public void OnQuitButtonClick()
     {
         Application.Quit();
     }
+
 }

@@ -102,7 +102,7 @@ public class Ennemy : MonoBehaviour
         currentHP -= damage;
         if (isBoss)
         {
-            material.SetFloat("_ColorChange", material.GetFloat("_ColorChange") - 0.5f);
+            //material.SetFloat("_ColorChange", material.GetFloat("_ColorChange") - 0.5f);
             if (currentHP <= (ennemyHP / 2) && !isFaster)
             {
                 isFaster = true;

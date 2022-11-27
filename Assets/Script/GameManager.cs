@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject level1Background;
     [SerializeField] private GameObject level2Background;
     [SerializeField] private GameObject levelCanvas;
+    Volume volume;
     private int level;
     public static DeathData deathData;
 
@@ -25,6 +27,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        volume = Camera.main.GetComponent<Volume>();
+        volume.enabled = PostProcessingController.postProcessing; 
         level = CharacterManager.currentCharacter.currentLevel;
         Debug.Log(CharacterManager.currentCharacter.currentLevel);
         deathData = new DeathData();
