@@ -44,33 +44,35 @@ public class GameManager : MonoBehaviour
     {
         if(level == 1)
         {
+            SpawnEnnemies(boss, 1);
+            yield return new WaitForSeconds(60f);
             //First wave 16 seconds
-            SpawnEnnemies(merman, 3);
-            yield return new WaitForSeconds(3f);
-            SpawnEnnemies(zombie, 3);
-            yield return new WaitForSeconds(3f);
-            SpawnEnnemies(zombie, 3);
-            SpawnEnnemies(giant, 5);
+            //SpawnEnnemies(merman, 3);
+            //yield return new WaitForSeconds(3f);
+            //SpawnEnnemies(zombie, 3);
+            //yield return new WaitForSeconds(3f);
+            //SpawnEnnemies(zombie, 3);
+            //SpawnEnnemies(giant, 5);
             yield return new WaitForSeconds(5f);
 
-            Time.timeScale = 0;
-            levelCanvas.SetActive(true);
-            Debug.Log("First wave done!");
+            ////Time.timeScale = 0;
+            ////levelCanvas.SetActive(true);
+            //Debug.Log("First wave done!");
 
-            //Second wave 30 seconds
-            SpawnEnnemies(merman, 5, true);
-            yield return new WaitForSeconds(5f);
-            SpawnEnnemies(zombie2, 5);
-            yield return new WaitForSeconds(5f);
-            SpawnEnnemies(zombie, 10, true);
-            yield return new WaitForSeconds(3f);
-            SpawnEnnemies(merman, 7);
-            yield return new WaitForSeconds(3f);
-            SpawnEnnemies(zombie2, 7, true);
-            yield return new WaitForSeconds(4f);
-            SpawnEnnemies(zombie2, 7);
-            yield return new WaitForSeconds(10f);
-            Debug.Log("Second wave done!");
+            ////Second wave 30 seconds
+            //SpawnEnnemies(merman, 5, true);
+            //yield return new WaitForSeconds(5f);
+            //SpawnEnnemies(zombie2, 5);
+            //yield return new WaitForSeconds(5f);
+            //SpawnEnnemies(zombie, 10, true);
+            //yield return new WaitForSeconds(3f);
+            //SpawnEnnemies(merman, 7);
+            //yield return new WaitForSeconds(3f);
+            //SpawnEnnemies(zombie2, 7, true);
+            //yield return new WaitForSeconds(4f);
+            //SpawnEnnemies(zombie2, 7);
+            //yield return new WaitForSeconds(10f);
+            //Debug.Log("Second wave done!");
 
 
 

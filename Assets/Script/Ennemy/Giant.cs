@@ -9,7 +9,7 @@ public class Giant : Ennemy
         Attacking,
         Berserk
     }
-    GiantState currentState = GiantState.Idling;
+    GiantState currentState = GiantState.Chasing;
     [SerializeField] GameObject knifeObject;
     Animator animator;
     float waitTime = 2f;
