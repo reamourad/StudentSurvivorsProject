@@ -541,6 +541,7 @@ MonoBehaviour:
   goldPrefab: {fileID: 679377737438405714, guid: 16e8c8d3ae2c6884dab58f48d64ed5bb, type: 3}
   speed: 1
   ennemyHP: 2
+  currentHP: 0
   isTrackingPlayer: 0
   isBoss: 0
   damagePrefab: {fileID: 6861022767773149360, guid: 13410b0721c695f44b33cf76bf969ba3, type: 3}
