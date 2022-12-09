@@ -6,6 +6,7 @@ public class FireballSpawner : BaseWeapon
 {
     public GameObject player;
     [SerializeField] GameObject fireBall;
+    [SerializeField] SimpleObjectPool pool;
 
     private void Start()
     {
@@ -15,7 +16,11 @@ public class FireballSpawner : BaseWeapon
     {
         while (player)
         {
-            var fire = Instantiate(fireBall, player.transform.position, Quaternion.identity);
+            var fire = pool.Get();
+            fire.transform.position = player.transform.position;
+            fire.transform.rotation = Quaternion.identity;
+            fire.SetActive(true);
+            //var fire = Instantiate(fireBall, player.transform.position, Quaternion.identity);
             fire.GetComponent<Fireball>().damage = this.damage;
             fire.GetComponent<Fireball>().player = this.player;
             fire.transform.localScale += new Vector3(0.5f * level, 0.5f * level, 0.5f * level);

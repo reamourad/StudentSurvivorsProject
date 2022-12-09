@@ -13,9 +13,11 @@ public class Giant : Ennemy
     [SerializeField] GameObject knifeObject;
     Animator animator;
     float waitTime = 2f;
+    [SerializeField] SimpleObjectPool pool;
     protected override void Start()
     {
         base.Start();
+        pool = GameObject.Find("GiantKnifeObjectPool").GetComponent<SimpleObjectPool>();
         animator = GetComponent<Animator>();
     }
     protected override void Update()
@@ -69,7 +71,11 @@ public class Giant : Ennemy
 
     public void SpawnKnife()
     {
-        GameObject knife = Instantiate(knifeObject, transform.position, Quaternion.identity);
+        GameObject knife = pool.Get();
+        knife.transform.position = transform.position;
+        knife.transform.rotation = Quaternion.identity;
+        knife.SetActive(true);
+        //GameObject knife = Instantiate(knifeObject, transform.position, Quaternion.identity);
         knife.GetComponent<GiantKnife>().giant = gameObject;
     }
 

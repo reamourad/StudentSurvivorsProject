@@ -24,12 +24,13 @@ public class Ennemy : MonoBehaviour
     [SerializeField] GameObject healthUI;
     private AudioSource audioSource;
     Material material;
-
-
     public Slider slider;
+    private SimpleObjectPool pool;
+    private GameManager gameManager;
 
     protected virtual void Start()
     {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         currentHP = ennemyHP;
         audioSource = GetComponent<AudioSource>();
         audioSource.time = 0.2f;
@@ -118,24 +119,33 @@ public class Ennemy : MonoBehaviour
             float randomGold = Random.Range(0, 11);
             if (randomHealth50 == 1)
             {
-                Instantiate(health50Prefab, transform.position, Quaternion.identity);
+                pool = gameManager.health50Pool;
+                //Instantiate(health50Prefab, transform.position, Quaternion.identity);
             }
             else if (randomHealth25 == 1)
             {
-                Instantiate(health25Prefab, transform.position, Quaternion.identity);
+                pool = gameManager.health25Pool;
+                //Instantiate(health25Prefab, transform.position, Quaternion.identity);
             }
             else if (randomMagnet == 1)
             {
-                Instantiate(magnetPrefab, transform.position, Quaternion.identity);
+                pool = gameManager.magnetPool;
+                //Instantiate(magnetPrefab, transform.position, Quaternion.identity);
             }
             else if (randomGold == 1)
             {
-                Instantiate(goldPrefab, transform.position, Quaternion.identity);
+                pool = gameManager.coinPool;
+                //Instantiate(goldPrefab, transform.position, Quaternion.identity);
             }
             else
             {
-                Instantiate(crystalPrefab, transform.position, Quaternion.identity);
+                pool = gameManager.crystalPool;
+                //Instantiate(crystalPrefab, transform.position, Quaternion.identity);
             }
+            var item = pool.Get();
+            item.transform.position = transform.position;
+            item.transform.rotation = Quaternion.identity;
+            item.SetActive(true);
             audioSource.Play();
             StartCoroutine(SoundCoroutine());
 

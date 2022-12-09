@@ -140,6 +140,7 @@ MonoBehaviour:
   healthUI: {fileID: 2439186372274841583}
   slider: {fileID: 191242833605099871}
   knifeObject: {fileID: 6359546531645874937, guid: 25b438e319deb214f90d393871ae0cdb, type: 3}
+  pool: {fileID: 5632800657750749172, guid: 3c58cb15a466ed9478627e99c7f2075a, type: 3}
 --- !u!61 &6281616519010849820 stripped
 BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 2746772133970865424, guid: 9cf586210fa8eab4cbbde77567ed04b4, type: 3}
