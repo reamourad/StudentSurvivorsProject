@@ -71,6 +71,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Giant
       objectReference: {fileID: 0}
+    - target: {fileID: 6772594680948142914, guid: 9cf586210fa8eab4cbbde77567ed04b4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7129597436115761765, guid: 9cf586210fa8eab4cbbde77567ed04b4, type: 3}
       propertyPath: m_Controller
       value: 

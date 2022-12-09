@@ -24,6 +24,11 @@ public class GameManager : MonoBehaviour
     public SimpleObjectPool coinPool;
     public SimpleObjectPool magnetPool;
     public SimpleObjectPool crystalPool;
+    public SimpleObjectPool mermanPool;
+    public SimpleObjectPool zombiePool;
+    public SimpleObjectPool giantPool;
+    private SimpleObjectPool pool;
+
     private int level;
     public static DeathData deathData;
 
@@ -53,13 +58,13 @@ public class GameManager : MonoBehaviour
             //yield return new WaitForSeconds(60f);
             //First wave 16 seconds
             SpawnEnnemies(merman, 3);
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(10f);
             SpawnEnnemies(zombie, 3);
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(10f);
             SpawnEnnemies(zombie, 3);
+            
+            yield return new WaitForSeconds(10f);
             SpawnEnnemies(giant, 5);
-            yield return new WaitForSeconds(5f);
-
             //Time.timeScale = 0;
             //levelCanvas.SetActive(true);
             Debug.Log("First wave done!");
@@ -261,7 +266,32 @@ public class GameManager : MonoBehaviour
                 }
                 spawnPosition += player.transform.position;
 
-                GameObject enemyObject = Instantiate(ennemyPrefab, spawnPosition, Quaternion.identity);
+                GameObject enemyObject;
+                if (ennemyPrefab.GetComponent<Merman>())
+                {
+                    pool = mermanPool;
+                }
+                else if (ennemyPrefab.GetComponent<Zombie>())
+                {
+                    pool = zombiePool;
+                }
+                else if (ennemyPrefab.GetComponent<Giant>())
+                {
+                    pool = giantPool;
+                }
+
+                if(pool != null)
+                {
+                    enemyObject = pool.Get();
+                    enemyObject.transform.position = spawnPosition;
+                    enemyObject.transform.rotation = Quaternion.identity;
+                    enemyObject.SetActive(true);
+                }
+                else
+                {
+                    enemyObject = Instantiate(ennemyPrefab, spawnPosition, Quaternion.identity);
+                }
+                //GameObject enemyObject = Instantiate(ennemyPrefab, spawnPosition, Quaternion.identity);
                 Ennemy ennemy = enemyObject.GetComponent<Ennemy>();
 
                 ennemy.isTrackingPlayer = !isWaveTracking;

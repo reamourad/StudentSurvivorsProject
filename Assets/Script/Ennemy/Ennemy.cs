@@ -175,7 +175,14 @@ public class Ennemy : MonoBehaviour
         boxCollider2D.enabled = false;
         healthUI.SetActive(false);
         yield return new WaitForSeconds(1f);
-        Destroy(gameObject);
+        if (this.GetComponent<Merman>() || this.GetComponent<Zombie>() || this.GetComponent<Giant>())
+        {
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
 
     }
 
@@ -195,12 +202,20 @@ public class Ennemy : MonoBehaviour
             {
                 if (!isBoss)
                 {
-                    Destroy(gameObject);
+                    if(this.GetComponent<Merman>() || this.GetComponent<Zombie>() || this.GetComponent<Giant>())
+                    {
+                        gameObject.SetActive(false);
+                    }
+                    else
+                    {
+                        Destroy(gameObject);
+                    }
+                   
                 }
-                else
-                {
-                    //StartCoroutine(gameObject.GetComponent<Boss>().DistortCoroutine());
-                }
+                //else
+                //{
+                //    //StartCoroutine(gameObject.GetComponent<Boss>().DistortCoroutine());
+                //}
             }
         }
     }

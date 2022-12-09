@@ -123,6 +123,51 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &900784
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 900785}
+  - component: {fileID: 900786}
+  m_Layer: 0
+  m_Name: ZombiePool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &900785
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 900784}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 894310879}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &900786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 900784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 620d0296fd53eec44b2254510f581e0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPrebaf: {fileID: 4303228095830564005, guid: 5886e12494f3c65498fa17a2d9ed30a9, type: 3}
 --- !u!1001 &7965391
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2538,6 +2583,9 @@ MonoBehaviour:
   coinPool: {fileID: 814095547}
   magnetPool: {fileID: 931461298}
   crystalPool: {fileID: 398016172}
+  mermanPool: {fileID: 170389266}
+  zombiePool: {fileID: 900786}
+  giantPool: {fileID: 1431041680}
 --- !u!4 &159034992
 Transform:
   m_ObjectHideFlags: 0
@@ -2739,6 +2787,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6062522394545299337, guid: dbe0bc5ed368b094ca1b18d20dcf99b5, type: 3}
   m_PrefabInstance: {fileID: 162446733}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &170389264
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 170389265}
+  - component: {fileID: 170389266}
+  m_Layer: 0
+  m_Name: MermanObjectPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &170389265
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170389264}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 894310879}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &170389266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170389264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 620d0296fd53eec44b2254510f581e0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPrebaf: {fileID: 6770704538338489530, guid: 2549c0937f4f26e47842f0c001ca88b8, type: 3}
 --- !u!1001 &173517149
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16589,6 +16682,9 @@ Transform:
   - {fileID: 398016171}
   - {fileID: 931461297}
   - {fileID: 814095546}
+  - {fileID: 900785}
+  - {fileID: 170389265}
+  - {fileID: 1431041679}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -23522,6 +23618,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6062522394545299337, guid: dbe0bc5ed368b094ca1b18d20dcf99b5, type: 3}
   m_PrefabInstance: {fileID: 1426642019}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1431041678
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1431041679}
+  - component: {fileID: 1431041680}
+  m_Layer: 0
+  m_Name: GiantObjectPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1431041679
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431041678}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 894310879}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1431041680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431041678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 620d0296fd53eec44b2254510f581e0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPrebaf: {fileID: 3228976171710761550, guid: 26928ff7e8c2ebf408349badbe5cc4e2, type: 3}
 --- !u!1001 &1436077057
 PrefabInstance:
   m_ObjectHideFlags: 0
