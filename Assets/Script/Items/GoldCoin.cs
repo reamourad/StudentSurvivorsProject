@@ -12,7 +12,7 @@ public class GoldCoin : MonoBehaviour
         {
             GameManager.deathData.goldCount++;
             TitleManager.saveData.gold++;
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 
@@ -25,7 +25,7 @@ public class GoldCoin : MonoBehaviour
     {
 
         yield return new WaitForSeconds(10f);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
 }

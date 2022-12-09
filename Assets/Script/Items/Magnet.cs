@@ -20,7 +20,7 @@ public class Magnet : MonoBehaviour
                 }
 
             }
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
     private void Start()
@@ -32,6 +32,6 @@ public class Magnet : MonoBehaviour
     {
 
         yield return new WaitForSeconds(10f);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

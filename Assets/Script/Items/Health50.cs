@@ -10,7 +10,7 @@ public class Health50 : MonoBehaviour
         if (player)
         {
             player.Add50Health();
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
     private void Start()
@@ -22,6 +22,6 @@ public class Health50 : MonoBehaviour
     {
 
         yield return new WaitForSeconds(10f);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

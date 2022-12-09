@@ -38,7 +38,7 @@ public class Crystal : MonoBehaviour
         {
             player.AddExp();
             crystals.Remove(gameObject);
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }
