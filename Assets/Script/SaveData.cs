@@ -11,4 +11,5 @@ public class SaveData
     public int damagePermanent = 0;
     public int speedPermanent = 0;
     public bool isLocked = true;
+    public bool isPlayerUnlocked;
 }

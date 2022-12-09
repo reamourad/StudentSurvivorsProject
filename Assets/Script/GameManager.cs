@@ -222,9 +222,9 @@ public class GameManager : MonoBehaviour
         {
             if (player)
             {
-                SpawnEnnemies(merman, 15 * spawnCounter, false, spawnCounter);
+                SpawnEnnemies(merman, 5 * spawnCounter, false, spawnCounter);
                 yield return new WaitForSeconds(4f);
-                SpawnEnnemies(zombie, 15 * spawnCounter, true, spawnCounter);
+                SpawnEnnemies(zombie, 5 * spawnCounter, true, spawnCounter);
                 yield return new WaitForSeconds(4f);
                 spawnCounter++;
             }
