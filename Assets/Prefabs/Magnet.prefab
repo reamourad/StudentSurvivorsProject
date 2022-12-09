@@ -124,3 +124,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e34af5840521a9f49b08854705b7dc6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boxCollider2D: {fileID: 8434049352470313574}
+  sprite: {fileID: 8434049352470313593}

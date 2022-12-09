@@ -59,12 +59,14 @@ public class GameManager : MonoBehaviour
             //First wave 16 seconds
             SpawnEnnemies(merman, 3);
             yield return new WaitForSeconds(10f);
-            SpawnEnnemies(zombie, 3);
-            yield return new WaitForSeconds(10f);
-            SpawnEnnemies(zombie, 3);
-            
-            yield return new WaitForSeconds(10f);
-            SpawnEnnemies(giant, 5);
+            //SpawnEnnemies(zombie, 3);
+            //yield return new WaitForSeconds(10f);
+            //SpawnEnnemies(zombie, 3);
+            //yield return new WaitForSeconds(10f);
+            //SpawnEnnemies(giant, 5);
+            //yield return new WaitForSeconds(5f);
+            SpawnEnnemies(boss, 1);
+            yield return new WaitForSeconds(15f);
             //Time.timeScale = 0;
             //levelCanvas.SetActive(true);
             Debug.Log("First wave done!");
@@ -286,6 +288,7 @@ public class GameManager : MonoBehaviour
                     enemyObject.transform.position = spawnPosition;
                     enemyObject.transform.rotation = Quaternion.identity;
                     enemyObject.SetActive(true);
+                    pool = null;
                 }
                 else
                 {
