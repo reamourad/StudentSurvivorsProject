@@ -19,7 +19,7 @@ public class Ennemy : MonoBehaviour
     public bool isTrackingPlayer;
     public bool isBoss;
     [SerializeField] GameObject damagePrefab;
-    [SerializeField] SpriteRenderer spriteRenderer;
+    public SpriteRenderer spriteRenderer;
     [SerializeField] BoxCollider2D boxCollider2D;
     [SerializeField] GameObject healthUI;
     private AudioSource audioSource;

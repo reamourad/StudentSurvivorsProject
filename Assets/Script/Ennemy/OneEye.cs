@@ -17,11 +17,13 @@ public class OneEye : Ennemy
     [SerializeField] GameObject handObject;
     [SerializeField] GameObject fireballObject;
     int randomNumber = 1;
-    [SerializeField] BoxCollider2D boxCollider; 
+    [SerializeField] BoxCollider2D boxCollider;
+    public Material material;
 
     protected override void Start()
     {
         base.Start();
+        material = spriteRenderer.material;
         animator = GetComponent<Animator>();
     }
 
@@ -53,16 +55,46 @@ public class OneEye : Ennemy
             case OneEyeState.Attacking:
                 animator.SetBool("isWalking", false);
                 animator.SetTrigger("Attack");
-                waitTime = 2f;
+                StartCoroutine(ShaderCoroutine2());
+                waitTime = 5f;
                 currentState = OneEyeState.Idling;
                 break;
             case OneEyeState.Attacking2:
                 animator.SetBool("isWalking", false);
                 animator.SetTrigger("Attack2");
+                StartCoroutine(ShaderCoroutine());
                 waitTime = 6f;
                 currentState = OneEyeState.Idling;
                 break;
         }  
+    }
+
+    IEnumerator ShaderCoroutine()
+    {
+        for (float i = 0.8f; i > 0; i -= 0.01f)
+        {
+            material.SetFloat("_Flash", material.GetFloat("_Flash") + 0.01f);
+            yield return new WaitForSeconds(0.01f);
+        }
+        for (float i = 0.8f; i > 0; i -= 0.01f)
+        {
+            material.SetFloat("_Flash", material.GetFloat("_Flash") - 0.01f);
+            yield return new WaitForSeconds(0.01f);
+        }
+    }
+
+    IEnumerator ShaderCoroutine2()
+    {
+        for (float i = 0.8f; i > 0; i -= 0.01f)
+        {
+            material.SetFloat("_Flash2", material.GetFloat("_Flash2") + 0.01f);
+            yield return new WaitForSeconds(0.01f);
+        }
+        for (float i = 0.8f; i > 0; i -= 0.01f)
+        {
+            material.SetFloat("_Flash2", material.GetFloat("_Flash2") - 0.01f);
+            yield return new WaitForSeconds(0.01f);
+        }
     }
 
     public void SpawnHand()

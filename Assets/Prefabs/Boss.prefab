@@ -150,7 +150,7 @@ PrefabInstance:
     - target: {fileID: 6515354015071473880, guid: 9cf586210fa8eab4cbbde77567ed04b4, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: 2100000, guid: 84664c5149f2ca7429d084212968b371, type: 2}
     - target: {fileID: 6772594680948142914, guid: 9cf586210fa8eab4cbbde77567ed04b4, type: 3}
       propertyPath: m_Name
       value: Boss
