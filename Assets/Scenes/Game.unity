@@ -30097,7 +30097,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c20a236ecd81bb442a4864e96b31545b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 15
   isInvincible: 0
   spriteRenderer: {fileID: 1039627657}
   isAlive: 1

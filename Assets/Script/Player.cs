@@ -51,6 +51,7 @@ public class Player : MonoBehaviour
             weapon.damage += TitleManager.saveData.damagePermanent;
         }
         speed += TitleManager.saveData.speedPermanent;
+        Debug.Log(speed);
         material = spriteRenderer.material;
     }
 
@@ -62,7 +63,8 @@ public class Player : MonoBehaviour
         //Movement
         float inputX = Input.GetAxis("Horizontal");
         float inputY = Input.GetAxis("Vertical");
-        transform.position += new Vector3(inputX, inputY) * speed * Time.deltaTime;
+        Vector3 movement = new Vector3(inputX, inputY);
+        transform.position += movement * Time.deltaTime * speed;
 
         if (inputX != 0)
         {

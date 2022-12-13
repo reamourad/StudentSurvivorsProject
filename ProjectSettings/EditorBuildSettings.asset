@@ -9,11 +9,11 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/Dead.unity
-    guid: f3484cff65f49f84b8da1c3a24a1e9ac
-  - enabled: 1
     path: Assets/Scenes/Title.unity
     guid: 2819705c40a349c4aab36561fadc970c
+  - enabled: 1
+    path: Assets/Scenes/Dead.unity
+    guid: f3484cff65f49f84b8da1c3a24a1e9ac
   - enabled: 1
     path: Assets/Scenes/Upgrade.unity
     guid: 98b1baf12b2c37a44a1c74ac9462ff7b
